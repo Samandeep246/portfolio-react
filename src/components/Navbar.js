@@ -1,22 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-function Navbar() {
+function Navbar({ darkMode, setDarkMode }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const linkClasses =
     "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition cursor-pointer";
-
-  // Sync dark mode with <html> tag
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
 
   return (
     <nav className="bg-white dark:bg-gray-900 shadow-md fixed w-full z-50">
@@ -24,20 +14,16 @@ function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo / Brand */}
           <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-            Samandeep
+            Samandeep Kaur
           </div>
 
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-6 items-center">
-            <a href="#about" className={linkClasses}>
-              About
-            </a>
-            <a href="#projects" className={linkClasses}>
-              Projects
-            </a>
-            <a href="#contact" className={linkClasses}>
-              Contact
-            </a>
+            <a href="#about" className={linkClasses}>About</a>
+            <a href="#experience" className={linkClasses}>Experience</a>
+            <a href="#projects" className={linkClasses}>Projects</a>
+            <a href="#skills" className={linkClasses}>Skills</a>
+            <a href="#contact" className={linkClasses}>Contact</a>
 
             {/* Dark Mode Toggle */}
             <button
@@ -64,10 +50,9 @@ function Navbar() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d={
-                    isOpen
-                      ? "M6 18L18 6M6 6l12 12"
-                      : "M4 6h16M4 12h16M4 18h16"
+                  d={isOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
                   }
                 />
               </svg>
@@ -78,28 +63,12 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-2">
-          <a
-            href="#about"
-            className={linkClasses}
-            onClick={() => setIsOpen(false)}
-          >
-            About
-          </a>
-          <a
-            href="#projects"
-            className={linkClasses}
-            onClick={() => setIsOpen(false)}
-          >
-            Projects
-          </a>
-          <a
-            href="#contact"
-            className={linkClasses}
-            onClick={() => setIsOpen(false)}
-          >
-            Contact
-          </a>
+        <div className="md:hidden px-4 pb-4 space-y-2 bg-white dark:bg-gray-900">
+          <a href="#about" className={linkClasses} onClick={() => setIsOpen(false)}>About</a>
+          <a href="#experience" className={linkClasses} onClick={() => setIsOpen(false)}>Experience</a>
+          <a href="#projects" className={linkClasses} onClick={() => setIsOpen(false)}>Projects</a>
+          <a href="#skills" className={linkClasses} onClick={() => setIsOpen(false)}>Skills</a>
+          <a href="#contact" className={linkClasses} onClick={() => setIsOpen(false)}>Contact</a>
 
           {/* Dark Mode Toggle in Mobile Menu */}
           <button
