@@ -52,16 +52,10 @@ function Contact() {
                 <FaEnvelope className="text-blue-500 text-xl" />
                 <div>
                   <p className="text-gray-500 dark:text-gray-400 text-sm">Email</p>
-                  <p className="text-gray-700 dark:text-gray-300">smngill246@gmail.com</p>
+                  <p className="text-gray-700 dark:text-gray-300">kaursamandeep1991@gmail.com</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <FaPhoneAlt className="text-green-500 text-xl" />
-                <div>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm">Phone</p>
-                  <p className="text-gray-700 dark:text-gray-300">+1 514-894-8900</p>
-                </div>
-              </div>
+             
               <div className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-red-500 text-xl" />
                 <div>

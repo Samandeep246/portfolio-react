@@ -2,17 +2,17 @@
 import React from "react";
 
 const skillCategories = {
-  "Frontend": [
-    "React.js", "JavaScript","HTML", "HTML5", "CSS", "Tailwind CSS", "Bootstrap", "Blazor", "jQuery"
-  ],
   "Backend / Frameworks": [
-    "C#", "ASP.NET MVC", "ASP.NET Web API", ".NET Framework", "VB.NET", "ASP.NET AJAX","ADO .NET", "WPF"
+    "C#", "ASP.NET MVC", "ASP.NET Web API", ".NET Framework", "VB.NET", "ADO .NET","REST APIs"
+  ],
+  "Frontend": [
+    "React.js", "JavaScript", "HTML", "HTML5", "CSS", "Tailwind CSS", "Bootstrap", "Blazor"
   ],
   "Databases & GIS": [
-    "SQL Server", "PostgreSQL", "PostGIS", "GeoServer", "ArcGIS", "OpenLayers", "uDig", "Google Earth Engine"
+    "SQL Server", "PostgreSQL", "PostGIS", "GeoServer", "ArcGIS", "OpenLayers", "uDig"
   ],
   "Tools & Methodologies": [
-    "Git", "REST APIs","NPM" ,"ETL Workflows"
+    "Git", "NPM", "ETL Workflows", "GitHub Copilot", "Claude AI", "Azure / Azure Functions"
   ]
 };
 

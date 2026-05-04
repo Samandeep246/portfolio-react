@@ -1,15 +1,27 @@
 function Experience() {
   const experiences = [
     {
+      role: "Dotnet Developer",
+      company: "Les Systèmes Adda Tech Inc.",
+      duration: "Jan 2026 – Present",
+      location: "Remote",
+      responsibilities: [
+        "Develop and maintain RESTful APIs using ASP.NET Core and C# for a multi-tenant healthcare platform (ClinicMaster), supporting workflows across reporting, service management, and clinic operations.",
+        "Implement backend features following clean architecture principles with structured controller, service, and repository layers.",
+        "Collaborate in an Agile environment using Git and Azure DevOps, participating in code reviews and sprint-based development cycles.",
+        "Working within a system architecture that incorporates Azure Functions and event-driven design patterns."
+      ]
+    },
+    {
       role: "Project Engineer",
       company: "Centre for Development of Advanced Computing (C-DAC)",
       duration: "Sep 2022 – Oct 2023",
       location: "On-site",
       responsibilities: [
-        "Analyzed client requirements to design, optimize, and implement new features, improving application performance and frontend UI/UX using ASP.NET Razor controls.",
-        "Implemented REST APIs for government website integrations and JSON file processing in C# .NET.",
-        "Developed backend logic with SQL Server stored procedures, schema design, and database management.",
-        "Debugged and resolved issues to enhance functionality and ensure data integrity."
+        "Gathered and analyzed client requirements to design, implement, and optimize application features using ASP.NET and C#, improving backend performance and frontend UI/UX.",
+        "Developed and integrated REST APIs using C# .NET to enable seamless data exchange with multiple government websites.",
+        "Applied Entity Framework (Database-First) to generate data models from existing SQL Server databases, streamlining CRUD operations and data relationships.",
+        "Developed and maintained SQL Server stored procedures and schemas to support complex business logic and efficient data processing."
       ]
     },
     {
@@ -18,32 +30,32 @@ function Experience() {
       duration: "Nov 2020 – Sep 2022",
       location: "On-site",
       responsibilities: [
-        "Developed a real-time geographical monitoring and reporting system to mitigate crop residue burning, reducing cases by 30%.",
-        "Designed and implemented mobile and web activity screens using React and Java for field officers.",
-        "Built features for status tracking and report generation for assigned fire locations.",
-        "Collaborated with cross-functional teams to design and enhance user interfaces and system features."
+        "Contributed to developing a real-time geographical monitoring and report generation system for active fire locations to support mitigation of crop residue burning.",
+        "Designed and implemented web interfaces using ASP.NET and C# for field officers to monitor active fire locations and verify assigned areas.",
+        "Built functionality for officials to track location statuses and generate reports for completed assignments.",
+        "Worked cross-functionally to develop and enhance features, improving UI and overall user experience using HTML, CSS, and JavaScript."
       ]
     },
     {
-      role: "Web Developer",
+      role: "Web GIS Developer",
       company: "Punjab Agricultural University",
       duration: "Sep 2018 – Nov 2020",
       location: "On-site",
       responsibilities: [
-        "Worked on both frontend and backend using ASP.NET, HTML, CSS, and JavaScript.",
-        "Designed SQL Server models, stored procedures, triggers, and user-defined functions.",
-        "Participated in all SDLC phases from requirements gathering to deployment and maintenance.",
-        "Performed unit, integration, functional, and regression testing."
+        "Utilized ADO.NET and SQL Server to write and maintain complex T-SQL scripts including stored procedures, triggers, and user-defined functions to support business logic and data manipulation.",
+        "Worked on both front-end and back-end systems using ASP.NET, HTML, CSS, and JavaScript to deliver functional and responsive web pages.",
+        "Participated across the full SDLC including requirements gathering, design, development, testing, deployment, and maintenance.",
+        "Collaborated with the team on unit, integration, functional, and regression testing to ensure application quality and reliability."
       ]
     },
     {
-      role: "Customer Service Representative",
+      role: "Elementary School Teacher",
       company: "Broadway Public School",
       duration: "Apr 2017 – Sep 2018",
       location: "On-site",
       responsibilities: [
-        "Delivered customer support services including issue resolution and client interaction.",
-        "Developed strong communication and service management skills through daily interactions with stakeholders."
+        "Delivered engaging and structured lessons to elementary-level students, fostering a positive and inclusive learning environment.",
+        "Developed strong communication, planning, and interpersonal skills through daily collaboration with students, parents, and staff."
       ]
     }
   ];
