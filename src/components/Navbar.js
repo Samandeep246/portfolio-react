@@ -6,12 +6,13 @@ function Navbar({ darkMode, setDarkMode }) {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const linkClasses =
-    "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition cursor-pointer";
+    "px-2 py-1 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition cursor-pointer";
 
   return (
     <nav className="bg-white dark:bg-gray-900 shadow-md fixed w-full z-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
+          
           {/* Logo / Brand */}
           <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
             Samandeep Kaur
@@ -28,7 +29,7 @@ function Navbar({ darkMode, setDarkMode }) {
             {/* Dark Mode Toggle */}
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="ml-4 px-3 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+              className="ml-4 px-3 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
             >
               {darkMode ? "Light" : "Dark"}
             </button>
@@ -50,9 +51,10 @@ function Navbar({ darkMode, setDarkMode }) {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d={isOpen
-                    ? "M6 18L18 6M6 6l12 12"
-                    : "M4 6h16M4 12h16M4 18h16"
+                  d={
+                    isOpen
+                      ? "M6 18L18 6M6 6l12 12"
+                      : "M4 6h16M4 12h16M4 18h16"
                   }
                 />
               </svg>
@@ -63,22 +65,33 @@ function Navbar({ darkMode, setDarkMode }) {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-2 bg-white dark:bg-gray-900">
-          <a href="#about" className={linkClasses} onClick={() => setIsOpen(false)}>About</a>
-          <a href="#experience" className={linkClasses} onClick={() => setIsOpen(false)}>Experience</a>
-          <a href="#projects" className={linkClasses} onClick={() => setIsOpen(false)}>Projects</a>
-          <a href="#skills" className={linkClasses} onClick={() => setIsOpen(false)}>Skills</a>
-          <a href="#contact" className={linkClasses} onClick={() => setIsOpen(false)}>Contact</a>
+        <div className="md:hidden px-4 pb-4 space-y-2 bg-white dark:bg-gray-900 shadow-md">
+          
+          {["about", "experience", "projects", "skills", "contact"].map((item) => (
+            <a
+              key={item}
+              href={`#${item}`}
+              onClick={() => setIsOpen(false)}
+              className="block px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 
+                         hover:bg-gray-100 dark:hover:bg-gray-800 
+                         active:bg-gray-200 dark:active:bg-gray-700 
+                         transition capitalize"
+            >
+              {item}
+            </a>
+          ))}
 
-          {/* Dark Mode Toggle in Mobile Menu */}
+          {/* Dark Mode Toggle */}
           <button
             onClick={() => {
               setDarkMode(!darkMode);
               setIsOpen(false);
             }}
-            className="w-full mt-2 px-3 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+            className="w-full mt-3 px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-700 
+                       text-gray-800 dark:text-gray-200 hover:bg-gray-300 
+                       dark:hover:bg-gray-600 transition"
           >
-            {darkMode ? "Light" : "Dark"}
+            {darkMode ? "Light Mode" : "Dark Mode"}
           </button>
         </div>
       )}

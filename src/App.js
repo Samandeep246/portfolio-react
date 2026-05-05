@@ -2,41 +2,39 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import About from "./components/About";
-import Skills from './components/Skills';
+import Skills from "./components/Skills";
 import Experience from "./components/experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
-  // Default dark mode
-  const [darkMode, setDarkMode] = useState(true);
+  // Initialize dark mode properly (no flicker, uses saved or system preference)
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("darkMode");
+    if (saved !== null) return saved === "true";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
 
-  // Load saved preference from localStorage
+  // Apply dark mode class + persist preference
   useEffect(() => {
-    const saved = localStorage.getItem('darkMode') === 'true';
-    setDarkMode(saved);
-  }, []);
+    localStorage.setItem("darkMode", darkMode);
 
-  // Update localStorage and HTML class for Tailwind dark mode
-  useEffect(() => {
-    localStorage.setItem('darkMode', darkMode);
     if (darkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
 
   return (
-    // Root div without background; sections will handle their own backgrounds
-    <div className={`App scroll-smooth min-h-screen relative bg-white dark:bg-gray-900`}>
-
-      {/* Navbar with toggle */}
+    <div className="App scroll-smooth min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      
+      {/* Navbar */}
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
       {/* Main content */}
-      <div className="pt-16 relative z-10">
+      <div className="pt-16">
         <Header />
         <About />
         <Skills />
